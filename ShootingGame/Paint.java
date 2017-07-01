@@ -17,17 +17,18 @@ class CanvasB extends JPanel {
 	public static int y2=0;
 
 
-	public CanvasB(){
+	public CanvasB(){ 
+		setPreferredSize(new Dimension(800, 700));
 		this.setBackground(Color.white);
     	Mouse mouse = new Mouse();
     	addMouseListener(mouse);
     	Random rand= new Random();
     	x=rand.nextInt(640)+80;
-    	y=rand.nextInt(640)+80;
+    	y=rand.nextInt(540)+80;
 
 	}
 	
-    public void paintComponent(Graphics g) { 
+    public void paintComponent(Graphics g) { //ペイントのコンポーネント
     	super.paintComponent(g);
     	this.getGraphics();
     	g.setColor(Color.blue);
@@ -43,4 +44,7 @@ class CanvasB extends JPanel {
     	g.fillOval(x - RADIUS1, y - RADIUS1, RADIUS1 * 2, RADIUS1 * 2); 
     
     }
+ 
+    
+
 }
